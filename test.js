@@ -18,6 +18,34 @@ lab.test('Should create an empty startup', () => {
 });
 //});
 
+lab.test("Check if the game adds entities correctly", () => {
+    return new Promise((res, rej)  => {
+	let g = new Game({});
+	let en1 = new GameEntity("Entity1");
+	g.addEntity("en1", en1);
+
+	let en1got = g.getEntity("en1");
+	Lab.expect(en1).to.equal(en1got);
+	res();
+    });
+});
+
+lab.test("Check if the game removes entities correctly", () => {
+    return new Promise((res, rej)  => {
+	let g = new Game({});
+	let en1 = new GameEntity("Entity1");
+	g.addEntity("en1", en1);
+
+	let en1got = g.getEntity("en1");
+	Lab.expect(en1).to.equal(en1got);
+
+	g.removeEntity("en1");
+	en1got = g.getEntity("en1");
+	Lab.expect(en1got).to.equal(null);
+	res();	
+    });
+});
+	 
 //describe('Game#checkonAdd', () => {
 lab.test("Should check that the game run 'onAdd' through all entities", () => {
     return new Promise((res, rej)  => {
