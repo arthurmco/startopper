@@ -1,7 +1,8 @@
 # startopper
 
-![Startopper logo](logo.svg "Logo")
-
+<p align="center">
+	<img src="logo.svg" alt="Startopper logo" />
+</p>
 
 This will be a online startup emulator, written in a new and common environment 
 for these startups: Node.js
@@ -11,6 +12,7 @@ for these startups: Node.js
 ## Things to do
 
 [ ] Finish the backend
+
 [ ] A nice frontend
 
 ## Licenses
