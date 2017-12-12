@@ -33,7 +33,10 @@ class Employee extends GameEntity {
 	this._task = ETask[task.toLowerCase()];
 	this._sex = Sex[sex.toLowerCase()];
 	this._enterprise = null;
-	this._xpgain = 0;
+
+	/* Base XP gain.
+	   Everything gains XP over time */
+	this._xpgain = 1;
     }
 
     get xp() {
@@ -60,6 +63,22 @@ class Employee extends GameEntity {
     }
 
     iterate(message) {
+	if (this._enterprise) {
+	    var mdata = message['e' + this._enterprise.name];
+
+	    /* XP increases proportionally to how lower you are from the
+	       average
+	    */
+	    let avg_xp_increase = 1 +
+		Math.min(0, (mdata.avg_experience - this._xp));
+
+	    /* Same with the age */
+	    let avg_age_increase = 1 +
+		Math.min(0, (mdata.avg_age - this._age));
+
+	    this.xpgain = avg_xp_increase + avg_age_increase;
+	}
+	
 	
 	this._xp += this._xpgain;
     }

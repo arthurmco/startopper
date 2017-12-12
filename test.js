@@ -1,4 +1,5 @@
 var assert = require('assert');
+
 var Startup = require('./startup');
 var Employee = require('./employee');
 var Game = require('./game');
@@ -50,6 +51,20 @@ describe('Employer#checkMessage', () => {
 	assert.deepEqual(msg.avg_age, 20, 'Wrong # of avg age');
 	
     });
+});
+
+
+
+describe('Employee#checkXPGainBare', () => {
+    it('Checks if employee have a small xp gain through a year inside an enterprise',
+       () => {
+	   let emp = new Employee('The man', 20, 0, 'chief', 'male');
+	   for (let i = 0; i < 12; i++) {
+	       emp.iterate({});
+	   }
+
+	   assert.deepEqual(emp.xp, 12, "Incorrect XP gain");
+       });
 });
 
 describe('Game#Iterations', () => {
