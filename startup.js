@@ -1,13 +1,20 @@
 'use strict';
 
-class Startup {
+var GameEntity = require('./centity');
+
+/* Represents a default startup software company */
+class Startup extends GameEntity {
     constructor(name, money = 0) {
-	this.name = name;
+	super(name);
 	this._money = money;
     }
 
     get money() {
 	return this._money;
+    }
+
+    iterate(message) {
+	
     }
     
 }
