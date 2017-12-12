@@ -6,6 +6,8 @@
 
 <p align="center">
 	<a href="https://travis-ci.org/arthurmco/startopper/"><img src="https://api.travis-ci.org/arthurmco/startopper.svg?branch=master" alt="Master branch build status" /></a>
+	<a href='https://coveralls.io/github/arthurmco/startopper?branch=master'><img src='https://coveralls.io/repos/github/arthurmco/startopper/badge.svg?branch=master' alt='Coverage Status' /></a>
+
 </p>
 
 This will be a online startup emulator, written in a new and common environment 
