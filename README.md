@@ -1,9 +1,17 @@
 # startopper
 
-This will be a startup emulator, written in a new and common environment for 
-these startups: Node.js
+![Startopper logo](logo.svg "Logo")
 
-(No offenses, only an observation)
+
+This will be a online startup emulator, written in a new and common environment 
+for these startups: Node.js
+
+(No offenses, only an observation. I :heart: you guys :D)
+
+## Things to do
+
+[ ] Finish the backend
+[ ] A nice frontend
 
 ## Licenses
 
