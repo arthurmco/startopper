@@ -4,16 +4,13 @@
   "description": "a startup game simulator, run on the startup favorite language!",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha test.js"
+    "test": "./node_modules/lab/bin/lab test.js"
   },
   "author": "Arthur M",
   "license": "MIT",
   "devDependencies": {
-    "blanket": "^1.2.3",
     "coveralls": "^3.0.0",
-    "html-file-cov": "^1.0.0",
-    "mocha": "^4.0.1",
-    "mocha-lcov-reporter": "^1.3.0"
+    "lab": "^14.2.0"
   },
   "dependencies": {},
   "config": {

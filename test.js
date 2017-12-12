@@ -1,22 +1,26 @@
-var assert = require('assert');
 
 var Startup = require('./startup');
 var Employee = require('./employee');
 var Game = require('./game');
 var GameEntity = require('./centity');
 
+const Lab = require('lab');
+const lab = exports.lab = Lab.script();
 
-describe('Startup#Init', () => {
-    it('Should create an empty startup', () => {
+//describe('Startup#Init', () => {
+lab.test('Should create an empty startup', () => {
+    return new Promise((res, rej)  => {
 	let st = new Startup("Josnei");
-	assert(st.name == "Josnei");
-	assert(st.money === 0);
+	Lab.expect(st.name).to.equal("Josnei");
+	Lab.expect(st.money).to.equal(0);
+	res();
     });
 });
+//});
 
-
-describe('Game#checkonAdd', () => {
-    it("Should check that the game run 'onAdd' through all entities", () => {
+//describe('Game#checkonAdd', () => {
+lab.test("Should check that the game run 'onAdd' through all entities", () => {
+    return new Promise((res, rej)  => {
 	let entitiesAdd = [false, false, false];
 	
 	let g = new Game({});
@@ -31,44 +35,54 @@ describe('Game#checkonAdd', () => {
 	g.addEntity('en2', en2);
 	g.addEntity('en3', en3);
 
-	assert(entitiesAdd[0] === true, "en1 was not iterated");
-	assert(entitiesAdd[0] === true, "en2 was not iterated");
-	assert(entitiesAdd[2] === true, "en3 was not iterated");
+	Lab.expect(entitiesAdd[0]).to.equal(true);// "en1 was not iterated");
+	Lab.expect(entitiesAdd[1]).to.equal(true);// "en2 was not iterated");
+	Lab.expect(entitiesAdd[2]).to.equal(true);// "en3 was not iterated");
+
+	res();
     });
 });
+//});
 
-describe('Employer#checkMessage', () => {
-    it("Check validity of the message generated", () => {
+//describe('Employer#checkMessage', () => {
+lab.test("Check validity of the message generated", () => {
+    return new Promise((res, rej)  => {
 	let st = new Startup("Manos", 100000);
 	st.addEmployee(new Employee("John", 22, 100, 'programmer', 'male'));
 	st.addEmployee(new Employee("Matt", 18, 90, 'programmer', 'male'));
 	st.addEmployee(new Employee("Claire", 20, 140, 'programmer', 'female'));
 
 	let msg = st._getMessage();;
-	assert.deepEqual(msg.men_workers, 2, 'Wrong # of men workers');
-	assert.deepEqual(msg.women_workers, 1, 'Wrong # of women workers');
-	assert.deepEqual(msg.avg_experience, 110, 'Wrong # of avg experience');
-	assert.deepEqual(msg.avg_age, 20, 'Wrong # of avg age');
-	
+	Lab.expect(msg.men_workers).to.equal(2);// 'Wrong # of men workers');
+	Lab.expect(msg.women_workers).to.equal(1);// 'Wrong # of women workers');
+	Lab.expect(msg.avg_experience).to.equal(110);// 'Wrong # of avg experience');
+	Lab.expect(msg.avg_age).to.equal(20);// 'Wrong # of avg age');
+	res();
     });
+    
 });
+//});
 
 
 
-describe('Employee#checkXPGainBare', () => {
-    it('Checks if employee have a small xp gain through a year inside an enterprise',
-       () => {
-	   let emp = new Employee('The man', 20, 0, 'chief', 'male');
-	   for (let i = 0; i < 12; i++) {
-	       emp.iterate({});
-	   }
+//describe('Employee#checkXPGainBare', () => {
+lab.test('Checks if employee have a small xp gain through a year inside an enterprise',
+	 () => {
+	     return new Promise((res, rej)  => {
+		 let emp = new Employee('The man', 20, 0, 'chief', 'male');
+		 for (let i = 0; i < 12; i++) {
+		     emp.iterate({});
+		 }
 
-	   assert.deepEqual(emp.xp, 12, "Incorrect XP gain");
-       });
-});
+		 Lab.expect(emp.xp).to.equal(12);// "Incorrect XP gain");
+		 res();
+	     });
+	 });
+//});
 
-describe('Game#Iterations', () => {
-    it('Should check that the game iterated through all entities', () => {
+//describe('Game#Iterations', () => {
+lab.test('Should check that the game iterated through all entities', () => {
+    return new Promise((res, rej)  => {
 	let entitiesActive = [false, false, false];
 	
 	let g = new Game({});
@@ -85,11 +99,11 @@ describe('Game#Iterations', () => {
 
 	g.iterateAll();
 
-	assert(entitiesActive[0] === true, "en1 was not iterated");
-	assert(entitiesActive[0] === true, "en2 was not iterated");
-	assert(entitiesActive[2] === true, "en3 was not iterated");
+	Lab.expect(entitiesActive[0]).to.equal(true);// "en1 was not iterated");
+	Lab.expect(entitiesActive[1]).to.equal(true);// "en2 was not iterated");
+	Lab.expect(entitiesActive[2]).to.equal(true);// "en3 was not iterated");
+
+	res();
     });
 });
-
-
-
+//});
