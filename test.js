@@ -1,5 +1,6 @@
 var assert = require('assert');
 var Startup = require('./startup');
+var Employee = require('./employee');
 var Game = require('./game');
 var GameEntity = require('./centity');
 

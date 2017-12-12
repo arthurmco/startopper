@@ -31,7 +31,9 @@ class Employee extends GameEntity {
 	this._age = age;
 	this._xp = xp;
 	this._task = ETask[task.toLowerCase()];
-	this._sex = Sex[sex.toLowerCase()];	   
+	this._sex = Sex[sex.toLowerCase()];
+	this._enterprise = null;
+	this._xpgain = 0;
     }
 
     get xp() {
@@ -49,6 +51,19 @@ class Employee extends GameEntity {
     get sex() {
 	return SexRev[this._sex];
     }
+
+    /* Hire the employee to some enterprise */
+    hireTo(enterprise) {
+	if (this._enterprise === null) {
+	    this._enterprise = enterprise;
+	}
+    }
+
+    iterate(message) {
+	
+	this._xp += this._xpgain;
+    }
+    
 
 }
 
