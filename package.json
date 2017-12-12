@@ -9,6 +9,22 @@
   "author": "Arthur M",
   "license": "MIT",
   "devDependencies": {
-    "mocha": "^4.0.1"
+    "blanket": "^1.2.3",
+    "coveralls": "^3.0.0",
+    "html-file-cov": "^1.0.0",
+    "mocha": "^4.0.1",
+    "mocha-lcov-reporter": "^1.3.0"
+  },
+  "dependencies": {},
+  "config": {
+    "blanket": {
+      "pattern": [
+        ""
+      ],
+      "data-cover-never": [
+        "node_modules",
+        "tests"
+      ]
+    }
   }
 }
