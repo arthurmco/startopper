@@ -8,4 +8,4 @@ cache:
   directories:
     - "node_modules"
 
-after_success: ./node_modules/lab/bin/lab test.js -r lcov
+after_success: ./node_modules/lab/bin/lab test.js -r lcov | ./node_modules/.bin/coveralls
