@@ -1,0 +1,14 @@
+{
+  "name": "startopper",
+  "version": "0.1.0",
+  "description": "a startup game simulator, run on the startup favorite language!",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha test.js"
+  },
+  "author": "Arthur M",
+  "license": "MIT",
+  "devDependencies": {
+    "mocha": "^4.0.1"
+  }
+}
