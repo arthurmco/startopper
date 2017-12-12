@@ -19,6 +19,11 @@ class GameEntity {
 	console.log(`warning: ${this.name} has no iterate() method`);
     }
 
+    /* Things to run after entity is added */
+    onAdd(message) {}
+
+    /* Things to run after entity is removed */
+    onRemove(message) {}
     
 }
 
