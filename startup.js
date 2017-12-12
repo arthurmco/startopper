@@ -1,5 +1,5 @@
 'use strict';
-
+ 
 var GameEntity = require('./centity');
 
 /* Represents a default startup software company */
