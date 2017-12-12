@@ -8,6 +8,4 @@ cache:
   directories:
     - "node_modules"
 
-after_success: 'NODE_ENV=test YOURPACKAGE_COVERAGE=1 ./node_modules/.bin/mocha \
-  --require blanket \
-  --reporter mocha-lcov-reporter | ./node_modules/coveralls/bin/coveralls.js'
+after_success: ./node_modules/lab/bin/lab test.js -r lcov
