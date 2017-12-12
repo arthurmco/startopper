@@ -11,9 +11,9 @@ for these startups: Node.js
 
 ## Things to do
 
-[ ] Finish the backend
+* [ ] Finish the backend
 
-[ ] A nice frontend
+* [ ] A nice frontend
 
 ## Licenses
 
